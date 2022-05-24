@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsStationActivity">
+
+
+    <TextView
+        android:id="@+id/details_station_name_textview"
+        android:layout_width="246dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_station_nbVeloLibre_textview"
+        android:layout_width="104dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="240dp"
+        android:text="Nb Velo Libre :"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_station_nbPlaceLibre_textview"
+        android:layout_width="104dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="236dp"
+        android:text="Nb Place Libre :"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_station_stationName_textview"
+        android:layout_width="109dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="260dp"
+        android:text="Nom station :"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_id_textview"
+        android:layout_width="132dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="392dp"
+        android:layout_marginEnd="180dp"
+        android:textSize="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_station_stationCode_textview"
+        android:layout_width="118dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="236dp"
+        android:text="Code Station :"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_code_textview"
+        android:layout_width="132dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="80dp"
+        android:textSize="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_capacity_textview"
+        android:layout_width="79dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="296dp"
+        android:layout_marginEnd="140dp"
+        android:textSize="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_station_stationCapacity_textview"
+        android:layout_width="109dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="236dp"
+        android:text="Capacité :"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_station_stationID_textview"
+        android:layout_width="37dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="392dp"
+        android:layout_marginEnd="320dp"
+        android:text="ID :"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_station_velo_bleu_textview"
+        android:layout_width="144dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="152dp"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/details_station_velo_vert_textview"
+        app:layout_constraintTop_toTopOf="@+id/details_station_velo_vert_textview"
+        app:srcCompat="@drawable/ic_baseline_directions_bike_24_green" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toStartOf="@+id/details_station_velo_bleu_textview"
+        app:layout_constraintTop_toTopOf="@+id/details_station_velo_bleu_textview"
+        app:srcCompat="@drawable/ic_baseline_directions_bike_24_blue" />
+
+    <TextView
+        android:id="@+id/details_station_velo_vert_textview"
+        android:layout_width="144dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="152dp"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_veloLibre_textview"
+        android:layout_width="144dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="96dp"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_placeLibre_textview"
+        android:layout_width="144dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="92dp"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/addFavori"
+        android:layout_width="38dp"
+        android:layout_height="36dp"
+        app:srcCompat="@drawable/ic_baseline_favorite_border"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="387dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

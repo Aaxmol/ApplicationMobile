@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">ApplicationMobileProjet</string>
     <string name="title_activity_maps">MapsActivity</string>
+
+
+    <string name="badge_label">Badge</string>
 </resources>
