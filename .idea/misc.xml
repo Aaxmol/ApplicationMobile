@@ -5,6 +5,17 @@
       <map>
         <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib by Axel/ApplicationMobile/app/src/main/res/layout/activity_main.xml" value="0.18072916666666666" />
         <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib by Axel/ApplicationMobile/app/src/main/res/layout/activity_maps.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_directions_bike_24_blue.xml" value="0.16" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite.xml" value="0.24" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.24" />
+        <entry key="app/src/main/res/layout/activity_details_station.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/activity_list_station.xml" value="0.2296875" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/activity_maps.xml" value="0.23385416666666667" />
+        <entry key="app/src/main/res/layout/fenetre_info.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/station_adapter.xml" value="0.24375" />
+        <entry key="app/src/main/res/menu/basic.xml" value="0.2033646709549728" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.16" />
       </map>
     </option>
   </component>

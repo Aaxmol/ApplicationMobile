@@ -6,13 +6,9 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback {
-    protected fun OnCreate(saveInstanceState: Bundle?) {
-        super.onCreate(saveInstanceState)
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.maps) as SupportMapFragment?
-        mapFragment!!.getMapAsync(this)
     }
-
-    override fun onMapReady(googleMap: GoogleMap) {}
 }
