@@ -6,6 +6,7 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -24,30 +25,22 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.io.Serializable
+import java.util.ArrayList
 
 class DetailsStationActivity :
-    AppCompatActivity(),
-    Serializable
+    AppCompatActivity()
     {
+        var stations: ArrayList<Station> = intent.getParcelableArrayListExtra<Station>("stationList") as ArrayList<Station>
+        val stationsDetail: MutableList<DetailStation> = mutableListOf()
+        val stationId = intent.getLongExtra("station_id", -1)
+        val stationName = intent.getStringExtra("station_name").toString()
+        val stationCapacity = intent.getIntExtra("station_capacity", -1)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_station)
-        val stationId = intent.getIntExtra("station_id", -1).toString()
-        val stationName: String? = intent.getStringExtra("station_name")
-        //val stations: MutableList<Station> = intent.getPa("list") as MutableList<Station>
 
-
-        val ID =
-            findViewById<TextView>(R.id.details_id_textview)
-        ID.text = stationId
-
-        val Name =
-            findViewById<TextView>(R.id.details_station_name_textview)
-        Name.text = stationName
-
-        synchroApi(stationId)
+        synchroApi(stationId,stationName,stationCapacity)
 
         /*---------------Apres que y'a favori, voir faire if avec des tag ---------------------------*/
 
@@ -56,10 +49,8 @@ class DetailsStationActivity :
         Log.d("lol", "${addFavori.background} -- ${addFavori.resources.hashCode()} -- ${addFavori.id.hashCode()}-- ${addFavori.drawable.hashCode()}")
         //Log.d("lol", "${addFavori.background.hashCode()} -- ${addFavori.resources.hashCode()} -- ${addFavori.drawable.hashCode()}")
         Log.d("lol", "${getDrawable(R.drawable.ic_baseline_favorite_border)} -- ${R.drawable.ic_baseline_favorite_border.hashCode()} -- ${R.drawable.ic_baseline_favorite_border}")// -- ${R.drawable.ic_baseline_favorite_border.hashCode()}
+
         addFavori.setOnClickListener(){
-
-
-
 
         /*if (addFavori.resources.hashCode() == R.drawable.ic_baseline_favorite_border.hashCode()) {
                 addFavori.setImageResource(R.drawable.ic_baseline_favorite)
@@ -87,7 +78,7 @@ class DetailsStationActivity :
         return super.onOptionsItemSelected(item)
     }
 
-    private fun synchroApi(stationId: String) {
+    private fun synchroApi(stationId: Long, stationName: String, stationCapacity: Int) {
 
         /*--------------------------------CONNEXION JSON STATION------------------------------*/
         val httpLoggingInterceptor = HttpLoggingInterceptor().apply {
@@ -114,14 +105,21 @@ class DetailsStationActivity :
                 val (stationCode, station_id, numBikesAvailable, num_bikes_available_types, numDocksAvailable) = it
                 val (mechanical, ebike) = num_bikes_available_types
 
-                if (stationId == station_id.toString()) {
+                //
+                //
+                //
+                DetailStation(stationCode, station_id, numBikesAvailable, num_bikes_available_types, numDocksAvailable, false)
+                //
+                //
+                //
+
+                if (stationId == station_id) {
                     val mechanical2 = mechanical.mechanical.toString()
                     val ebike2 = ebike.ebike.toString()
                     DetailStation(
                         stationCode, station_id, numBikesAvailable, mechanical2.toInt(), ebike2.toInt(),
                         numDocksAvailable, false
                     )
-
                     val Code =
                         findViewById<TextView>(R.id.details_code_textview)
                     Code.text = it.stationCode
@@ -137,12 +135,22 @@ class DetailsStationActivity :
                     val nbPlaceLibre =
                         findViewById<TextView>(R.id.details_placeLibre_textview)
                     nbPlaceLibre.text = it.numDocksAvailable.toString()
-
+                    val Capacity =
+                        findViewById<TextView>(R.id.details_capacity_textview)
+                    Capacity.text = stationCapacity.toString()
+                    val Name =
+                        findViewById<TextView>(R.id.details_station_name_textview)
+                    Name.text = stationName
+                    val ID =
+                        findViewById<TextView>(R.id.details_id_textview)
+                    ID.text = station_id.toString()
                 }
+
             }
         }
     }
 }
+
 
 
 

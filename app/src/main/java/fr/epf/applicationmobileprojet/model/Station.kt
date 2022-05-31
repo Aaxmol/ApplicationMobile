@@ -1,5 +1,9 @@
 package fr.epf.applicationmobileprojet.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Station(
     val station_id: Long,
     val name: String,
@@ -7,7 +11,7 @@ data class Station(
     val lon: Double,
     val capacity: Int
 
-) {
+) : Parcelable {
     companion object {
         fun bdd(nb : Int) =
             (1..100).map {

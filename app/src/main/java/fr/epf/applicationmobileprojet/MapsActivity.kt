@@ -27,14 +27,10 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.io.Serializable
-import kotlinx.parcelize.Parcelize
+import java.util.ArrayList
 
-@Parcelize
 class MapsActivity :
         AppCompatActivity(),
-        Serializable,
-        Parcelable,
         GoogleMap.OnInfoWindowClickListener,
         OnMapReadyCallback {
 
@@ -57,16 +53,14 @@ class MapsActivity :
     /* -------------------------------J'Y ARRIVE PAS LOL---------------------------------------*/
 
      override fun onInfoWindowClick(marker: Marker) {
-         val stationID = marker.snippet?.toInt()
-         val stationNom = marker.title
 
          stations.map {
              if (it.name == marker.title){
                  val intent = Intent(this, DetailsStationActivity::class.java)
                  intent.putExtra("station_id", it.station_id)
                  intent.putExtra("station_name", it.name)
-                 //Here putParcebleExtra
-                 intent.putExtra("stationList", stations as Parcelable)
+                 intent.putExtra("station_capacity", it.capacity)
+                 intent.putParcelableArrayListExtra("stationList", stations as ArrayList<out Parcelable>)
                  startActivity(intent)
              }
          }
@@ -116,7 +110,6 @@ class MapsActivity :
 
             runBlocking {
                 val result = service.getStations()
-                Log.d(ContentValues.TAG, "synchroApi: ${result}")
                 val stationVelib = result.data.stations
                 stationVelib.map {
                     val (station_id, name, lat, lon, capacity) = it
