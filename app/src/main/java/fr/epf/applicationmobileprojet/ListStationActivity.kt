@@ -45,7 +45,7 @@ class ListStationActivity : AppCompatActivity() {
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.basic, menu)
+        menuInflater.inflate(R.menu.favoris, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -63,9 +63,8 @@ class ListStationActivity : AppCompatActivity() {
         startActivity(intent)    }
 
     private fun displayMap() {
-        /*val intent2 = Intent(this, MapsActivity::class.java)
-        startActivity(intent2)*/
-        synchroApi()
+        val intent = Intent(this, MapsActivity::class.java)
+        startActivity(intent)
     }
 
     fun synchroApi() {

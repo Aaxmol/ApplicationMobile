@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    >
 
     <TextView
         android:id="@+id/adapter_station_textview"
@@ -12,7 +13,18 @@
         android:layout_height="30dp"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="12dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
         tools:text="Cyril Dumont">
 
     </TextView>
+
+    <ImageView
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="330dp"
+        android:src="@drawable/ic_baseline_favorite"
+        />
 </androidx.cardview.widget.CardView>

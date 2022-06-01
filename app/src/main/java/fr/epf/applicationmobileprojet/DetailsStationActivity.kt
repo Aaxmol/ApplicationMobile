@@ -12,6 +12,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.drawToBitmap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
@@ -71,12 +73,23 @@ class DetailsStationActivity :
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.display_map_action -> {
-                startActivity(Intent(this, MapsActivity::class.java))
+            R.id.display_map_action -> displayMap()
+            R.id.display_favoris_action -> displayFavoris()
             }
-        }
         return super.onOptionsItemSelected(item)
     }
+
+        private fun displayFavoris() {
+            val intent = Intent(this,ListStationActivity::class.java)
+            startActivity(intent)
+        }
+
+        private fun displayMap() {
+            val intent= Intent(this,MapsActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
     private fun synchroApi(stationId: Long, stationName: String, stationCapacity: Int) {
 
@@ -120,12 +133,12 @@ class DetailsStationActivity :
                         stationCode, station_id, numBikesAvailable, mechanical2.toInt(), ebike2.toInt(),
                         numDocksAvailable, false
                     )
-                    val Code =
+                    /*val Code =
                         findViewById<TextView>(R.id.details_code_textview)
-                    Code.text = it.stationCode
-                    val nbVeloLibre =
+                    Code.text = it.stationCode*/
+                    /*val nbVeloLibre =
                         findViewById<TextView>(R.id.details_veloLibre_textview)
-                    nbVeloLibre.text = it.numBikesAvailable.toString()
+                    nbVeloLibre.text = it.numBikesAvailable.toString()*/
                     val Meca =
                         findViewById<TextView>(R.id.details_station_velo_bleu_textview)
                     Meca.text = mechanical2
@@ -141,9 +154,9 @@ class DetailsStationActivity :
                     val Name =
                         findViewById<TextView>(R.id.details_station_name_textview)
                     Name.text = stationName
-                    val ID =
+                    /*val ID =
                         findViewById<TextView>(R.id.details_id_textview)
-                    ID.text = station_id.toString()
+                    ID.text = station_id.toString()*/
                 }
 
             }

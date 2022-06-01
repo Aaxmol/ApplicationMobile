@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.withStateAtLeast
@@ -13,10 +15,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.LatLngBounds
-import com.google.android.gms.maps.model.Marker
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
 import fr.epf.applicationmobileprojet.api.LocalisationStations
 import fr.epf.applicationmobileprojet.api.StationService
 import fr.epf.applicationmobileprojet.databinding.ActivityMapsBinding
@@ -120,7 +119,10 @@ class MapsActivity :
 
                 .map {
                     stations.add(it)
-                    mMap.addMarker(MarkerOptions().apply {
+                    mMap.addMarker(
+                        MarkerOptions()
+                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET))
+                            .apply {
                         val newStation = LatLng(it.lat, it.lon)
                         position(newStation)
                         title(it.name)
@@ -130,5 +132,29 @@ class MapsActivity :
             }
             googleMap.setOnInfoWindowClickListener(this)
             stationAdapter?.notifyDataSetChanged()
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.map, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        when (id) {
+            R.id.display_map_action -> displayMap()
+            R.id.display_favoris_action -> displayFavoris()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun displayFavoris() {
+        val intent = Intent(this, ListStationActivity::class.java)
+        startActivity(intent)    }
+
+    private fun displayMap() {
+        val intent = Intent(this, MapsActivity::class.java)
+        startActivity(intent)
     }
 }

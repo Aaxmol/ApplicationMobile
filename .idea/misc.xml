@@ -5,6 +5,21 @@
       <map>
         <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib by Axel/ApplicationMobile/app/src/main/res/layout/activity_main.xml" value="0.18072916666666666" />
         <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib by Axel/ApplicationMobile/app/src/main/res/layout/activity_maps.xml" value="0.1" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/drawable/ic_baseline_directions_bike_24_blue.xml" value="0.1735" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/drawable/ic_baseline_directions_bike_24_green.xml" value="0.1735" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/drawable/ic_baseline_favorite.xml" value="0.1735" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1735" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/drawable/ic_baseline_favorite_border.xml" value="0.2075" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/drawable/ic_baseline_local_parking_24.xml" value="0.1735" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.1" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1735" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/layout/activity_details_station.xml" value="0.22" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/layout/activity_list_station.xml" value="0.1" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/layout/station_adapter.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/menu/basic.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/menu/favoris.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/menu/map.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/menu/map_menu.xml" value="0.21197916666666666" />
         <entry key="app/src/main/res/drawable/ic_baseline_directions_bike_24_blue.xml" value="0.16" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite.xml" value="0.24" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.24" />
