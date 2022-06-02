@@ -1,10 +1,13 @@
 package fr.epf.applicationmobileprojet
 
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.withStateAtLeast
@@ -23,13 +26,14 @@ import fr.epf.applicationmobileprojet.databinding.ActivityMapsBinding
 import fr.epf.applicationmobileprojet.model.Station
 import fr.epf.applicationmobileprojet.model.DetailStation
 import kotlinx.coroutines.runBlocking
+import kotlinx.parcelize.Parcelize
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.ArrayList
 
-class MapsActivity :
+class MapsActivity:
         AppCompatActivity(),
         GoogleMap.OnInfoWindowClickListener,
         OnMapReadyCallback {
@@ -51,20 +55,18 @@ class MapsActivity :
         }
     }
     /* -------------------------------J'Y ARRIVE PAS LOL---------------------------------------*/
-
      override fun onInfoWindowClick(marker: Marker) {
 
          stations.map {
              if (it.name == marker.title){
-                 val intent = Intent(this, DetailsStationActivity::class.java)
+                 val intent =Intent(this, DetailsStationActivity::class.java)
                  intent.putExtra("station_id", it.station_id)
                  intent.putExtra("station_name", it.name)
                  intent.putExtra("station_capacity", it.capacity)
-                 intent.putParcelableArrayListExtra("stationList", stations as ArrayList<out Parcelable>)
                  startActivity(intent)
              }
          }
-        }
+     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -130,5 +132,28 @@ class MapsActivity :
             }
             googleMap.setOnInfoWindowClickListener(this)
             stationAdapter?.notifyDataSetChanged()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.map, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        when (id) {
+            R.id.display_map_action -> displayMap()
+            R.id.display_favoris_action -> displayFavoris()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun displayFavoris() {
+        val intent = Intent(this, FavoriteActivity::class.java)
+        startActivity(intent)    }
+
+    private fun displayMap() {
+        val intent = Intent(this, MapsActivity::class.java)
+        startActivity(intent)
     }
 }

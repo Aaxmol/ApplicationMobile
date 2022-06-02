@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/display_map_action"
+        android:icon="@drawable/ic_baseline_location_on_24_highlighted"
+        android:title="Map"
+        android:enabled="true"
+        />
+
+    <item
+        android:id="@+id/display_favoris_action"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="Favoris"
+        android:enabled="true"
+        />
+</menu>

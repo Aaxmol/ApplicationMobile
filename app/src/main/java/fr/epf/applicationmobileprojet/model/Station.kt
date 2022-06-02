@@ -5,11 +5,11 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Station(
-    val station_id: Long,
-    val name: String,
+    var station_id: Long,
+    var name: String,
     val lat: Double,
     val lon: Double,
-    val capacity: Int
+    var capacity: Int
 
 ) : Parcelable {
     companion object {
