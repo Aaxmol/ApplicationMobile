@@ -1,6 +1,7 @@
 package fr.epf.applicationmobileprojet
 
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
@@ -15,20 +16,24 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.*
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.LatLngBounds
+import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.MarkerOptions
 import fr.epf.applicationmobileprojet.api.LocalisationStations
 import fr.epf.applicationmobileprojet.api.StationService
 import fr.epf.applicationmobileprojet.databinding.ActivityMapsBinding
 import fr.epf.applicationmobileprojet.model.Station
 import fr.epf.applicationmobileprojet.model.DetailStation
 import kotlinx.coroutines.runBlocking
+import kotlinx.parcelize.Parcelize
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.ArrayList
 
-class MapsActivity :
+class MapsActivity:
         AppCompatActivity(),
         GoogleMap.OnInfoWindowClickListener,
         OnMapReadyCallback {
@@ -50,20 +55,18 @@ class MapsActivity :
         }
     }
     /* -------------------------------J'Y ARRIVE PAS LOL---------------------------------------*/
-
      override fun onInfoWindowClick(marker: Marker) {
 
          stations.map {
              if (it.name == marker.title){
-                 val intent = Intent(this, DetailsStationActivity::class.java)
+                 val intent =Intent(this, DetailsStationActivity::class.java)
                  intent.putExtra("station_id", it.station_id)
                  intent.putExtra("station_name", it.name)
                  intent.putExtra("station_capacity", it.capacity)
-                 intent.putParcelableArrayListExtra("stationList", stations as ArrayList<out Parcelable>)
                  startActivity(intent)
              }
          }
-        }
+     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -119,10 +122,7 @@ class MapsActivity :
 
                 .map {
                     stations.add(it)
-                    mMap.addMarker(
-                        MarkerOptions()
-                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET))
-                            .apply {
+                    mMap.addMarker(MarkerOptions().apply {
                         val newStation = LatLng(it.lat, it.lon)
                         position(newStation)
                         title(it.name)
@@ -133,7 +133,6 @@ class MapsActivity :
             googleMap.setOnInfoWindowClickListener(this)
             stationAdapter?.notifyDataSetChanged()
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.map, menu)
@@ -150,7 +149,7 @@ class MapsActivity :
     }
 
     private fun displayFavoris() {
-        val intent = Intent(this, ListStationActivity::class.java)
+        val intent = Intent(this, FavoriteActivity::class.java)
         startActivity(intent)    }
 
     private fun displayMap() {

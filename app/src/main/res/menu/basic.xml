@@ -5,13 +5,13 @@
         android:id="@+id/display_map_action"
         android:icon="@drawable/ic_baseline_location_on_24"
         android:title="Map"
-        app:showAsAction="ifRoom"
+        android:enabled="true"
         />
 
     <item
         android:id="@+id/display_favoris_action"
         android:icon="@drawable/ic_baseline_favorite_24"
         android:title="Favoris"
-        app:showAsAction="ifRoom"
+        android:enabled="true"
         />
 </menu>
