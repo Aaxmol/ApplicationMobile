@@ -1,21 +1,18 @@
 package fr.epf.applicationmobileprojet
 
+import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import fr.epf.applicationmobileprojet.model.Station
 
 
-class StationAdapter(val stationFavorite : List<String>, val stationList: List<Station>) :
+class StationAdapter(val stationFavorite : List<String>, val stationList: List<Station>, val contextFavorite: Context) :
     RecyclerView.Adapter<StationAdapter.StationViewHolder>() {
-
-    //val stationList: MutableList<Station> = mutableListOf()
 
     class StationViewHolder(val view : View) : RecyclerView.ViewHolder(view)
 
@@ -32,8 +29,8 @@ class StationAdapter(val stationFavorite : List<String>, val stationList: List<S
         val favori = Station(
             200,"nom", 30.20, 20.30, 90
         )
-        favori.station_id = stationFavorite[position].toLong()
 
+        favori.station_id = stationFavorite[position].toLong()
         stationList.map {
             if(favori.station_id == it.station_id) {
                 stationTextview.text = it.name
@@ -41,8 +38,7 @@ class StationAdapter(val stationFavorite : List<String>, val stationList: List<S
                 favori.capacity = it.capacity
             }
         }
-
-        holder.view.setOnClickListener {
+        stationTextview.setOnClickListener {
             val context = it.context
             val intent = Intent(context, DetailsStationActivity::class.java)
 
@@ -52,10 +48,7 @@ class StationAdapter(val stationFavorite : List<String>, val stationList: List<S
             intent.putExtra("station_capacity", favori.capacity)
             context.startActivity(intent)
         }
-
-
     }
-
 
     override fun getItemCount() =  stationFavorite.size
 }

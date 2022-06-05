@@ -3,13 +3,11 @@ package fr.epf.applicationmobileprojet
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import fr.epf.applicationmobileprojet.api.LocalisationStations
 import fr.epf.applicationmobileprojet.model.Station
 import kotlinx.coroutines.runBlocking
@@ -21,9 +19,8 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 class FavoriteActivity : AppCompatActivity() {
 
     private var dbHandler: DBHandler? = null
-    var stationFavorite: List<String?>? = null
-    val stationList: MutableList<Station> = mutableListOf()
-
+    private var stationFavorite: List<String?>? = null
+    private val stationList: MutableList<Station> = mutableListOf()
     private var stationAdapter : StationAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +37,7 @@ class FavoriteActivity : AppCompatActivity() {
 
         dbHandler = DBHandler(this@FavoriteActivity)
         stationFavorite = dbHandler!!.getAllStations()
-        stationAdapter = StationAdapter(stationFavorite as List<String>, stationList)
+        stationAdapter = StationAdapter(stationFavorite as List<String>, stationList, this)
         recyclerView.adapter = stationAdapter
     }
 
@@ -67,7 +64,6 @@ class FavoriteActivity : AppCompatActivity() {
                     station_id, name, lat, lon, capacity
                 )
             }
-
                 .map {
                     stationList.add(it)
                 }
@@ -75,17 +71,23 @@ class FavoriteActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.map, menu)
+        menuInflater.inflate(R.menu.favoris, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         when (id) {
+            R.id.display_synchro_action -> displaySync()
             R.id.display_map_action -> displayMap()
             R.id.display_favoris_action -> displayFavoris()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun displaySync(){
+        Toast.makeText(this, "Synchronisation en cours ...", Toast.LENGTH_SHORT).show()
+        synchroApi()
     }
 
     private fun displayFavoris() {
