@@ -3,6 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1735" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/drawable/ic_baseline_directions_bike_24_blue.xml" value="0.1735" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/drawable/ic_baseline_directions_bike_24_green.xml" value="0.1735" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1735" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1735" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/layout/activity_details_station.xml" value="0.5" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/layout/activity_favorite.xml" value="0.2" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/layout/activity_maps.xml" value="0.2" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/layout/fenetre_info.xml" value="0.2" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/layout/station_adapter.xml" value="0.2" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/lpeis/OneDrive/Bureau/ChauveLib/ApplicationMobile/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib by Axel/ApplicationMobile/app/src/main/res/layout/activity_main.xml" value="0.18072916666666666" />
         <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib by Axel/ApplicationMobile/app/src/main/res/layout/activity_maps.xml" value="0.1" />
         <entry key="..\:/Users/lpeis/OneDrive/Bureau/Velib/ApplicationMobile/app/src/main/res/drawable/ic_baseline_directions_bike_24_blue.xml" value="0.1735" />
