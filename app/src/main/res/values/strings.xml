@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">ApplicationMobileProjet</string>
-    <string name="title_activity_maps">MapsActivity</string>
+    <string name="app_name">Velib</string>
+    <string name="title_activity_maps">Velib</string>
 
 
     <string name="badge_label">Badge</string>
+
+    <!-- Permissions -->
+    <string name="location_permission_denied">Vous devez autoriser votre téléphone à accéder à la géolocalisation</string>
+    <string name="permission_required_toast">La localisation est requise pour cette démo</string>
 </resources>

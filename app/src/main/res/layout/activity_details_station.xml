@@ -5,32 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailsStationActivity"
-    tools:layout_editor_absoluteX="-4dp"
+    tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="45dp">
 
 
     <TextView
         android:id="@+id/details_station_name_textview"
-        android:layout_width="313dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
 
+        android:layout_marginTop="16dp"
         android:hint="Nom de la station"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.285"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/details_station_stationCapacity_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:layout_marginEnd="260dp"
+        android:layout_marginLeft="25dp"
         android:text="Capacité totale :"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,19 +40,20 @@
 
     <ImageView
         android:id="@+id/details_line_image"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:gravity="center"
         android:src="@drawable/ic_line"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="120dp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/details_station_stationCapacity_textview2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:layout_marginEnd="200dp"
+        android:layout_marginLeft="160dp"
         android:text=" vélos"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,21 +61,21 @@
 
     <TextView
         android:id="@+id/details_capacity_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:layout_marginEnd="240dp"
-        android:hint="12"
+        android:layout_marginLeft="140dp"
         android:textSize="15sp"
+        android:hint="12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/details_station_velo_bleu_textview2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="264dp"
+        android:layout_width="75dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="204dp"
         android:text="vélos"
         android:textColor="@color/purple_500"
         android:textSize="17sp"
@@ -82,12 +85,13 @@
 
     </TextView>
 
+
     <TextView
         android:id="@+id/details_placeLibre_textview2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="228dp"
-        android:layout_marginEnd="204dp"
+        android:layout_marginEnd="196dp"
         android:text="places libres"
         android:textColor="@color/black"
         android:textSize="17sp"
@@ -101,8 +105,8 @@
         android:id="@+id/details_station_velo_vert_textview3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="88dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="68dp"
         android:text="e-bikes"
         android:textColor="@color/teal_200"
         android:textSize="17sp"
@@ -114,51 +118,52 @@
 
     <TextView
         android:id="@+id/details_station_update_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="288dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginTop="336dp"
+        android:gravity="center"
         android:text="Dernière mise à jour : à l'instant"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="27dp"
         android:layout_height="27dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="184dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="148dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_directions_bike_24_green" />
 
     <ImageView
         android:id="@+id/details_line_image2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="204dp"
+        android:gravity="center"
         android:src="@drawable/ic_line"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="187dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="27dp"
         android:layout_height="27dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="340dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="316dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_directions_bike_24_blue" />
-
 
     <TextView
         android:id="@+id/details_station_velo_vert_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="148dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="128dp"
         android:textColor="@color/teal_200"
         android:textSize="17sp"
         android:textStyle="bold"
@@ -169,30 +174,30 @@
         android:id="@+id/details_station_velo_bleu_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="308dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="292dp"
         android:textColor="@color/purple_500"
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:layout_width="27dp"
         android:layout_height="27dp"
         android:layout_marginTop="224dp"
-        android:layout_marginEnd="336dp"
+        android:layout_marginEnd="316dp"
         android:src="@drawable/ic_baseline_local_parking_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/details_placeLibre_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="18dp"
+        android:layout_height="20dp"
         android:layout_marginTop="228dp"
-        android:layout_marginEnd="308dp"
+        android:layout_marginEnd="296dp"
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold"
@@ -201,10 +206,12 @@
 
     <Button
         android:id="@+id/addFavori"
-        android:layout_width="265dp"
-        android:layout_height="46dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="440dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:gravity="center"
         android:text="Ajouter aux favoris"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

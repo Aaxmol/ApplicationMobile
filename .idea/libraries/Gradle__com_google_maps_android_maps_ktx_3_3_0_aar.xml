@@ -1,9 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.maps.android:maps-ktx:3.3.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c01fd0153857daca2868bfb7c4898a59/transformed/maps-ktx-3.3.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c01fd0153857daca2868bfb7c4898a59/transformed/maps-ktx-3.3.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c01fd0153857daca2868bfb7c4898a59/transformed/maps-ktx-3.3.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7c064831278e68685140c9ad97baaa3b/transformed/maps-ktx-3.3.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7c064831278e68685140c9ad97baaa3b/transformed/maps-ktx-3.3.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7c064831278e68685140c9ad97baaa3b/transformed/maps-ktx-3.3.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.maps.android/maps-ktx/3.3.0/ba0b4cb05302de5140fdfba6819f7dbf8074982c/maps-ktx-3.3.0-javadoc.jar!/" />
